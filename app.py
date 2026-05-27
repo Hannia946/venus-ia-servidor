@@ -13,7 +13,7 @@ MODEL_PATH  = os.path.join(os.path.dirname(__file__), 'modelo_venus_V2.keras')
 SCALER_PATH = os.path.join(os.path.dirname(__file__), 'scaler_venus.pkl')
 
 try:
-    model  = keras.models.load_model(MODEL_PATH)
+    model  = tf.keras.models.load_model(MODEL_PATH)
     scaler = joblib.load(SCALER_PATH)
     print("Modelo y scaler cargados correctamente")
 except Exception as e:
