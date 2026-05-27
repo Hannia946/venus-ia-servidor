@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # ── Cargar modelo y scaler al iniciar el servidor ─────────────────
 # Render busca los archivos en la raíz del proyecto
-MODEL_PATH  = os.path.join(os.path.dirname(__file__), 'modelo_venus.keras')
+MODEL_PATH  = os.path.join(os.path.dirname(__file__), 'modelo_venus_V2.keras')
 SCALER_PATH = os.path.join(os.path.dirname(__file__), 'scaler_venus.pkl')
 
 try:
