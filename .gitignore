@@ -1,0 +1,16 @@
+# Entorno virtual
+entornoIA/
+
+# Python
+__pycache__/
+*.pyc
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Variables sensibles
+.env
