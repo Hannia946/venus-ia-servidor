@@ -1,6 +1,9 @@
 import os
 import numpy as np
 import joblib
+import sys
+import tensorflow as tf
+import sklearn
 from flask import Flask, request, jsonify
 import keras
 
@@ -22,10 +25,17 @@ ESTADOS = ['Óptimo', 'Estrés Ambiental', 'Estrés Hídrico', 'Crítico']
 
 @app.route('/', methods=['GET'])
 def home():
+    
     return jsonify({
         'servidor': 'Venus Atrapamoscas - IA',
         'estado':   'activo',
-        'modelo':   'cargado' if model else 'error al cargar'
+        'modelo':   'cargado' if model else 'error al cargar',
+        'versiones': {
+            'python':      sys.version,
+            'tensorflow':  tf.__version__,
+            'keras':       keras.__version__,
+            'sklearn':     sklearn.__version__
+        }
     })
 
 @app.route('/predecir', methods=['POST'])
